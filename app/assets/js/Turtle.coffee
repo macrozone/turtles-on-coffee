@@ -1,5 +1,6 @@
-# global class, usable on browser and in node.js if wanted
+# global class, can be used globally on webserver or as a node-module
 root = exports ? @
+
 class root.Turtle
 	qualityFactor: 1
 	stepWidth: 10
