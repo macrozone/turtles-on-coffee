@@ -1,4 +1,7 @@
-class window.RandomLooperDrawer
+# global class, can be used globally on webserver or as a node-module
+root = exports ? @
+
+class root.RandomLooperDrawer
 	interval: 0
 	running: false
 	speed: 1000
