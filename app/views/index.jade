@@ -1,0 +1,29 @@
+extends layout
+
+
+block navigation 
+ .navbar.navbar-inverse.navbar-fixed-top
+   .navbar-inner
+     .container-fluid
+       button.btn.btn-navbar(type="button",data-toggle="collapse",data-target=".nav-collapse")
+         span.icon-bar
+         span.icon-bar
+         span.icon-bar
+         
+       a.brand(href="#") Turtles and Co.
+       .nav-collapse.collapse  
+          ul.nav
+            li.active: a(href="#") Home
+            li: a#clearBackground(href="#") Clear Background
+            li: a(href="#about") About
+       
+block content
+
+  .hero-unit
+    h1 Background 
+    p click on the Background
+    
+ 
+
+        
+    

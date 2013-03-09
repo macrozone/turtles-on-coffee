@@ -1,0 +1,21 @@
+doctype 5
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title lindenmayer
+    != css('bootstrap.min.css')
+    != css('bootstrap-responsive.min.css')
+    != css('styles.css')
+
+  body(data-view="#{view}")
+    block navigation
+    block content
+
+
+    != js('jquery.js')
+    != js('bootstrap.min.js')
+    != js('qualityCanvas.jquery.js')
+    != js('RandomLooperDrawer.js')
+    != js('Turtle.js')
+    != js('lindenmayer.js')
+    != js('scripts.js')

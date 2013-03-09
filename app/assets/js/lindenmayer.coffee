@@ -1,0 +1,6 @@
+window.Lindenmayer =
+  
+  processWord: (word) ->
+     
+  
+  
