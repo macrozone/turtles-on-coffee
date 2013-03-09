@@ -1,6 +1,5 @@
 #= require RandomLooperDrawer.coffee
 #= require qualityCanvas.jquery.coffee
-#= require RandomLooperDrawer.coffee
 #= require Turtle.coffee
 #= require lindenmayer.coffee
 
