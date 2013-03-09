@@ -1,8 +1,8 @@
 {
-    "name": "lindenmayer"
-  , "version": "0.0.1"
+    "name": "turtles-on-coffee"
+  , "version": "0.0.5"
   , "dependencies": {
-        "express": "3.0.0beta4"
+        "express": "3.x"
       , "connect-assets": "2.1.x"
       , "jade": "*"
       , "stylus": "*"
@@ -12,7 +12,7 @@
       "start": "server.js"
     }
   , "engines": {
-        "node": "0.8.21"
+        "node": "0.8.x"
       , "npm": "1.1.x"
     }
 }
