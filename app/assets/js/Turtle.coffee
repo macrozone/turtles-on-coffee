@@ -1,5 +1,6 @@
-# global class
-class window.Turtle
+# global class, usable on browser and in node.js if wanted
+root = exports ? @
+class root.Turtle
 	qualityFactor: 1
 	stepWidth: 10
 	x: 0
