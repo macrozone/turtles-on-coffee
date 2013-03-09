@@ -1,3 +1,9 @@
+#= require RandomLooperDrawer.coffee
+#= require qualityCanvas.jquery.coffee
+#= require RandomLooperDrawer.coffee
+#= require Turtle.coffee
+#= require lindenmayer.coffee
+
 resizeCanvasWithWindow = ($backgroundCanvas) ->
 		width = $(document).width()
 		height = $(document).height()
