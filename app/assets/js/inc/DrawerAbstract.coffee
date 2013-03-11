@@ -1,7 +1,7 @@
 # global class, can be used globally on webserver or as a node-module
 root = exports ? @
 
-class root.RandomLooperDrawer
+class root.DrawerAbstract
 	interval: 0
 	running: false
 	speed: 1000
@@ -11,6 +11,7 @@ class root.RandomLooperDrawer
 	# draws per second
 	# if its over 1000, it will do multiple steps per tick
 	# it should then be a multipe of 1000
+	# set 0 for infitit (carefull)
 	setSpeed: (@speed) ->
 
 	addTurtle: (turtle) ->
@@ -18,10 +19,12 @@ class root.RandomLooperDrawer
 		
 	start: ->
 		if not @running
-
-			delay = 1000 / @speed
-			repeats = Math.ceil @speed / 1000
-			console.log repeats
+			if @speed > 0
+				delay = 1000 / @speed
+				repeats = Math.ceil @speed / 1000
+			else 
+				delay = 0
+				repeats = 1
 			@running = true
 			@interval = setInterval =>
 				@step() for i in [1..repeats]
@@ -36,11 +39,4 @@ class root.RandomLooperDrawer
 
 	step: ->
 		@turtleStep turtle for turtle in @turtles
-
-	turtleStep: (turtle) ->
-		id = Math.floor(Math.random() * 2)
-		switch id
-			when 0 then turtle.turnLeft() 
-			when 1 then turtle.forward() 
-			when 2 then turtle.turnRight() 
 

@@ -9,10 +9,27 @@ html(lang="en")
     != css('styles.css')
 
   body(data-view="#{view}")
-    block navigation
+    block navigation 
+        .navbar.navbar-inverse.navbar-fixed-top
+           .navbar-inner
+             .container-fluid
+               button.btn.btn-navbar(type="button",data-toggle="collapse",data-target=".nav-collapse")
+                 span.icon-bar
+                 span.icon-bar
+                 span.icon-bar
+                 
+               a.brand(href="/") Turtles on Coffee
+               .nav-collapse.collapse-navbar-responsive-collapse 
+                  ul#mainNav.nav
+
+                    li: a(href="/random") Random
+                    li: a(href="/lindenmayer") Lindenmayer
+                    li: a(href="/about") About
+                ul.nav.pull-right
+                  li: a#clearBackground(href="#") Clear Background
+                    
     block content
 
+    block scripts
+        != js('all.js')
 
-    != js('jquery.js')
-    != js('bootstrap.min.js')
-    != js('scripts.js')

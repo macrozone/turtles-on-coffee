@@ -15,7 +15,7 @@ class root.Turtle
 
 	setCanvas: ($canvas) ->
 		@context = $canvas.get(0).getContext "2d"
-		@qualityFactor = $canvas.qualityCanvas("quality")
+		@qualityFactor = $canvas.canvasHelper "quality"
 
 	setColor: (@color) ->
 

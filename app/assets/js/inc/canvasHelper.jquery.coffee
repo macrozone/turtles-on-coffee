@@ -1,5 +1,5 @@
 $ = jQuery
-pluginName = "qualityCanvas"
+pluginName = "canvasHelper"
 
 methods = 
   init: (options) ->
@@ -7,8 +7,6 @@ methods =
     $this = $ this
     $this.data pluginName, settings
 
-
-  
   width: (width) ->
     $this = $ this
     {quality: quality} = $this.data pluginName
@@ -21,23 +19,23 @@ methods =
     console.log quality
     $this.attr "height", height * quality
     $this.height height
+  
   quality: () ->
     $this = $ this
     {quality: quality} = $this.data pluginName
     quality
+  
   clear: ()->
     $this = $ this
     canvas = $this.get 0
     # this resets the canvas  
     canvas.width = canvas.width
  
-
-$.fn.qualityCanvas = (method) ->
-    
+$.fn.canvasHelper = (method) ->
   # Method calling logic
   if methods[method]
     return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ))
   else if ( typeof method == 'object' || ! method ) 
     return methods.init.apply( this, arguments )
   else
-    $.error( 'Method ' +  method + ' does not exist on jQuery.tooltip' )
+    $.error( 'Method ' +  method + ' does not exist on '+pluginName+'.tooltip' )
