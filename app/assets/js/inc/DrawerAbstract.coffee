@@ -1,6 +1,7 @@
 # global class, can be used globally on webserver or as a node-module
 root = exports ? @
 
+
 class root.DrawerAbstract
 	interval: 0
 	running: false
@@ -35,7 +36,10 @@ class root.DrawerAbstract
 		clearInterval @interval
 	clear: ->
 		@stop()
+
+	removeTurtles: ->
 		@turtles = []
+	
 
 	step: ->
 		@turtleStep turtle for turtle in @turtles

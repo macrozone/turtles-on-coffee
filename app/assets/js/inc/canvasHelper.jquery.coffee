@@ -16,7 +16,6 @@ methods =
   height: (height) ->
     $this = $ this
     {quality: quality} = $this.data pluginName
-    console.log quality
     $this.attr "height", height * quality
     $this.height height
   

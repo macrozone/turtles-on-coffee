@@ -2,9 +2,40 @@ extends layout
 
 block content
 
-	.hero-unit
-		h1 Lindenmayer
-		p click on the Background
+	.container
+		.row
+			.span12
+				h1 Lindenmayer
+
+				h2 Lindenmayer System Settings
+
+				input#startWord(type="text", placeholder="startWord") 
+				br
+
+				input#productions(type="text", placeholder="productions (pass json)")
+				br
+
+				input#steps(type="text", placeholder="steps")
+				br
+
+				h2 Turtle Settings
+				input#turtleStepWidth(type="text", placeholder="stepWidth") 
+				br
+
+				input#turtleAngle(type="text", placeholder="angle") 
+				br
+
+				input#turtleStartX(type="text", placeholder="startX") 
+
+				input#turtleStartY(type="text", placeholder="startY") 
+
+				input#turtleOrientation(type="text", placeholder="orientation")
+				br
+
+				button#process draw
+
+				p#resultWord
+			
 
 append scripts	
 	!= js('lindenmayer.js')
