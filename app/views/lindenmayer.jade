@@ -3,38 +3,56 @@ extends layout
 block content
 
 	.container
-		.row
-			.span12
-				h1 Lindenmayer
+		.row-fluid
+			.span3
+			
+				
+					fieldset
+						legend Lindenmayer-Settings
+   
+						.input-prepend.span12
+							span.add-on Startword
+							input#startWord(type="text", placeholder="startWord") 
+					
+						.input-prepend.span12
+							span.add-on Productions
+							textarea#productions(placeholder="F -> F++F++F, G -> G-G-G-, etc.")
+					
+						.input-prepend.span12
+							span.add-on Steps
+							input#steps(type="text", placeholder="steps")
+					fieldset
+						legend Turtle Settings
+						.input-prepend.span12
+							span.add-on Step Width
+							input#turtleStepWidth(type="text", placeholder="100") 
 
-				h2 Lindenmayer System Settings
+							input#autoStepWidth(type="checkbox", checked)
+						
+						.input-prepend.span12
+							span.add-on Angle °
+							input#turtleAngle(type="text", placeholder="60") 
+						
+						.input-prepend.span12
+							span.add-on start X
+							input#turtleStartX(type="text", placeholder="100") 
+						
+						.input-prepend.span12
+							span.add-on start Y
+							input#turtleStartY(type="text", placeholder="100") 
+						.input-prepend.span12
+							span.add-on Orientation °
+							input#turtleOrientation(type="text", placeholder="orientation")
+						br
 
-				input#startWord(type="text", placeholder="startWord") 
-				br
+						button#process draw
 
-				input#productions(type="text", placeholder="productions (pass json)")
-				br
+			.span9
+				.well
+					canvas#lindenmayerCanvas
+			
 
-				input#steps(type="text", placeholder="steps")
-				br
-
-				h2 Turtle Settings
-				input#turtleStepWidth(type="text", placeholder="stepWidth") 
-				br
-
-				input#turtleAngle(type="text", placeholder="angle") 
-				br
-
-				input#turtleStartX(type="text", placeholder="startX") 
-
-				input#turtleStartY(type="text", placeholder="startY") 
-
-				input#turtleOrientation(type="text", placeholder="orientation")
-				br
-
-				button#process draw
-
-				p#resultWord
+	
 			
 
 append scripts	
