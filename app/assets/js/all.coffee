@@ -1,4 +1,5 @@
 #= require inc/jquery.js
+#= require inc/jquery-ui-1.10.2.custom.min.js
 #= require inc/bootstrap.min.js
 #= require inc/canvasHelper.jquery.coffee
 
@@ -26,6 +27,13 @@ $ () ->
 	#init background
 	$backgroundCanvas = setupBackGroundCanvas()
 
-	$("#clearBackground").on "click", ->
+	$(".clearBackgroundButton").on "click", ->
 		$backgroundCanvas.canvasHelper "clear"
 		false
+
+	# dragable windows
+	
+	$(".draggableWindow").draggable()
+	$(".draggableWindow").on "click", ->
+		$(".draggableWindow").css "z-index", 1050
+		$(@).css "z-index", 2000	

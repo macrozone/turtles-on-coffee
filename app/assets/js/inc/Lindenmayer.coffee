@@ -10,7 +10,7 @@ class root.Lindenmayer
 	getWord: () ->
 		@word
 
-
+	# should be in the form F -> F+F+, 
 	setProductionsString: (fullString) ->
 		# parse it
 		productions = {}
@@ -22,7 +22,7 @@ class root.Lindenmayer
 			[key, value] = oneProduction.split "->"
 			key = Tools.trim key
 			value = Tools.trim value
-			console.log key, value
+			
 			productions[key] = value
 
 
