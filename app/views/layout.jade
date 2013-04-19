@@ -1,4 +1,7 @@
 doctype 5
+
+include mixins/draggableWindow
+
 html(lang="en")
   head
     meta(charset="utf-8")
@@ -6,7 +9,9 @@ html(lang="en")
     title Turtles on Coffee
     != css('bootstrap.min.css')
     != css('bootstrap-responsive.min.css')
+    != css('overcast/jquery-ui-1.10.2.custom.min.css')
     != css('styles.css')
+    != css('lindenmayer.css')
 
   body
     block navigation 
@@ -26,7 +31,7 @@ html(lang="en")
                     li: a(href="/lindenmayer") Lindenmayer
                     li: a(href="/about") About
                 ul.nav.pull-right
-                  li: a#clearBackground(href="#") Clear Background
+                  li: a.clearBackgroundButton(href="#") Clear Background
                     
     block content
 

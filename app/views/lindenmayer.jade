@@ -2,54 +2,54 @@ extends layout
 
 block content
 
-	.container
-		.row-fluid
-			.span3
-			
-				
-					fieldset
-						legend Lindenmayer-Settings
-   
-						.input-prepend.span12
-							span.add-on Startword
-							input#startWord(type="text", placeholder="startWord") 
-					
-						.input-prepend.span12
-							span.add-on Productions
-							textarea#productions(placeholder="F -> F++F++F, G -> G-G-G-, etc.")
-					
-						.input-prepend.span12
-							span.add-on Steps
-							input#steps(type="text", placeholder="steps")
-					fieldset
-						legend Turtle Settings
-						.input-prepend.span12
-							span.add-on Step Width
-							input#turtleStepWidth(type="text", placeholder="100") 
+	+draggableWindow("Lindenmayer Settings").lindenmayer-settings#lindenmayerSettings
+		
+		.input-prepend.span12
+			span.add-on Startword
+			input#startWord(type="text", placeholder="startWord", value="F") 
+	
+		.input-prepend.span12
+			span.add-on Productions
+			textarea#productions(placeholder="F -> F++F++F, G -> G-G-G-, etc.", rows="4", cols="20") F -> G++G, G -> F-F
+	
+		.input-prepend.span12
+			span.add-on Steps
+			input#steps(type="text", placeholder="steps", value="8")
 
-							input#autoStepWidth(type="checkbox", checked)
-						
-						.input-prepend.span12
-							span.add-on Angle °
-							input#turtleAngle(type="text", placeholder="60") 
-						
-						.input-prepend.span12
-							span.add-on start X
-							input#turtleStartX(type="text", placeholder="100") 
-						
-						.input-prepend.span12
-							span.add-on start Y
-							input#turtleStartY(type="text", placeholder="100") 
-						.input-prepend.span12
-							span.add-on Orientation °
-							input#turtleOrientation(type="text", placeholder="orientation")
-						br
+		br
 
-						button#process draw
+		button#process draw 
+		button.clearBackgroundButton clear
+	
+	+draggableWindow("Turtle Settings").turtle-settings#turtleSettings
 
-			.span9
-				.well
-					canvas#lindenmayerCanvas
+		.input-prepend.span12
+			span.add-on Step Width
+			input#turtleStepWidth(type="text", placeholder="100", value="2") 
+
+			input#autoStepWidth(type="checkbox")
+			span (experimental)
+		
+		.input-prepend.span12
+			span.add-on Angle °
+			input#turtleAngle(type="text", placeholder="60", value="90") 
+		
+		.input-prepend.span12
+			span.add-on start X
+			input#turtleStartX(type="text", placeholder="100", value="100") 
+		
+		.input-prepend.span12
+			span.add-on start Y
+			input#turtleStartY(type="text", placeholder="100", value="100") 
+		.input-prepend.span12
+			span.add-on Orientation °
+			input#turtleOrientation(type="text", placeholder="orientation", value="0")
+		
+
+
+	.span12
+		.well
+			canvas#lindenmayerCanvas
 			
 
 	

@@ -59,11 +59,11 @@ $ () ->
 		lindenmayer.doSteps steps
 
 		word = lindenmayer.getWord()
-
+		$("#theWord").text word
 		drawer.setWord word
 		drawer.start()
 	
-	$("#clearBackground").on "click", -> 
+	$(".clearBackgroundButton").on "click", -> 
 		drawer.clear()
 		$canvas.canvasHelper "clear"
 
