@@ -6,10 +6,13 @@
 # start settings
 
 connectMode = false
-speed = -1 # 0 is as fast as possible
+speed = 100000 # 0 is as fast as possible
 
 
-
+canvasWidth = 4000
+canvasHeight = 4000
+canvasScrollOffsetX = 2000
+canvasScrollOffsetY = 2000
 
 # document loaded
 $ () ->
@@ -29,23 +32,25 @@ $ () ->
 	$turtleStartX = $ "#turtleStartX"
 	$turtleStartY = $ "#turtleStartY"
 	$turtleOrientation = $ "#turtleOrientation"
+	$colorRotatingAngle = $ "#colorRotatingAngle"
 
 	# functions
 	setupCanvas = ($canvas) ->
-		$canvas.attr "width", $canvas.parent().width()
-		$canvas.attr "height", 1000
+		
 
 		$canvas.canvasHelper quality: 2
-		$(window).resize ->
-			$canvas.attr "width", $canvas.parent().width()
-			$canvas.attr "height", 1000
+		$canvas.canvasHelper "width", canvasWidth
+		$canvas.canvasHelper "height", canvasHeight
+		$canvas.parent().scrollLeft canvasScrollOffsetX
+		$canvas.parent().scrollTop canvasScrollOffsetY
+		
 
 	loadPreset = (preset) ->
 
 		
 
 		$startWord.val preset.startWord
-		$productions.val preset.productions
+		$productions.val preset.productions.replace /,/g, ",\n"
 		$steps.val preset.steps
 		$turtleStepWidth.val preset.turtleStepWidth
 
@@ -53,6 +58,7 @@ $ () ->
 		$turtleStartX.val preset.turtleStartX
 		$turtleStartY.val preset.turtleStartY
 		$turtleOrientation.val preset.turtleOrientation
+		$colorRotatingAngle.val preset.colorRotatingAngle
 
 
 	process = ->
@@ -70,8 +76,8 @@ $ () ->
 			turtle.setStepWidth stepWidth
 
 		turtle.setAngle parseInt $turtleAngle.val(), 10
-		turtle.setStart parseInt($turtleStartX.val(),10), parseInt($turtleStartY.val(),10), parseInt($turtleOrientation.val(),10)
-
+		turtle.setStart parseInt($turtleStartX.val(),10)+canvasScrollOffsetX, parseInt($turtleStartY.val(),10)+canvasScrollOffsetY, parseInt($turtleOrientation.val(),10)
+		turtle.setColorRotatingAngle parseFloat $colorRotatingAngle.val()
 
 		# process
 

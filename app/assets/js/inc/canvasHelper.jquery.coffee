@@ -4,12 +4,14 @@ pluginName = "canvasHelper"
 methods = 
   init: (options) ->
     settings = $.extend quality: 1, options
+
     $this = $ this
     $this.data pluginName, settings
 
   width: (width) ->
     $this = $ this
     {quality: quality} = $this.data pluginName
+
     $this.attr "width", width * quality
     $this.width width
 

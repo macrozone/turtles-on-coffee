@@ -45,6 +45,9 @@ block content
 		.input-prepend.span12
 			span.add-on Orientation °
 			input#turtleOrientation(type="text", placeholder="orientation")
+		.input-prepend.span12
+			span.add-on Color-Hue Rotationg Angle °
+			input#colorRotatingAngle(type="text", placeholder="1")
 		
 		br
 
@@ -52,10 +55,10 @@ block content
 		button.clearBackgroundButton clear
 
 
-	.span12
-		.well
-			canvas#lindenmayerCanvas
-			
+
+	.canvasContainer
+		canvas#lindenmayerCanvas
+		
 
 	
 			

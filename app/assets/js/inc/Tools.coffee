@@ -5,4 +5,4 @@ root = exports ? @
 class root.Tools
 
 	@trim: (string) ->
-		string.replace /^\s+|\s+$/g, ""
+		string.replace /\s+/g, ''

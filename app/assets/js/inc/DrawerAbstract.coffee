@@ -3,11 +3,10 @@ root = exports ? @
 
 
 class root.DrawerAbstract
-	interval: 0
-	running: false
-	speed: 1000
+	
 
 	constructor: (@turtles...) ->
+
 
 	# draws per second
 	# if its over 1000, it will do multiple steps per tick
@@ -20,20 +19,15 @@ class root.DrawerAbstract
 		
 	start: ->
 		if not @running
-			if @speed > 0
-				delay = 1000 / @speed
-				repeats = Math.ceil @speed / 1000
-			else 
-				delay = 0
-				repeats = 1
 			@running = true
-			@interval = setInterval =>
-				@step() for i in [1..repeats]
-			, delay
+			@step()
+			
+		
+	getStepTimeout: ->
+		Math.floor 1000/@speed
 
 	stop: ->
 		@running = false
-		clearInterval @interval
 	clear: ->
 		@stop()
 
@@ -42,5 +36,19 @@ class root.DrawerAbstract
 	
 
 	step: ->
-		@turtleStep turtle for turtle in @turtles
+		
+		if @running
+
+			multiSteps = Math.floor @speed /1000
+
+			for i in [0..multiSteps-1]
+				
+				for turtle in @turtles
+					@turtleStep turtle 
+					
+
+			window.setTimeout =>
+				@step()
+			,@getStepTimeout()
+
 

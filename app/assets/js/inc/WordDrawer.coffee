@@ -7,7 +7,7 @@ class root.WordDrawer extends root.DrawerAbstract
 	
 
 	setWord: (@word) ->
-
+		
 
 	turtleStep: (turtle) ->
 

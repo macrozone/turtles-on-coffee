@@ -1,16 +1,49 @@
+#= require inc/jquery.js
+#= require inc/jquery-ui-1.10.2.custom.min.js
+#= require inc/bootstrap.min.js
+#= require inc/canvasHelper.jquery.coffee
+
 #= require inc/RandomLooperDrawer.coffee
 #= require inc/Turtle.coffee
 
 
 # settings
-stepWidth = 30
+stepWidth = 10
 angle = 60
 connectMode = false
-speed = 0 # as fast as possible
+speed = 1000
+
+
+
+resizeCanvasWithWindow = ($canvas) ->
+	width = $(document).width()
+	height = $(document).height()
+	$canvas.canvasHelper "width", width
+	$canvas.canvasHelper "height", height
+
+setupBackGroundCanvas= () ->
+	$backgroundCanvas = $("<canvas />").attr "id", "background"
+	quality = 2
+	$backgroundCanvas.canvasHelper(quality: quality)
+	$backgroundCanvas.css position: "absolute", top: 0, left: 0, "z-index": -10
+	$backgroundCanvas.appendTo $ "body"
+	resizeCanvasWithWindow($backgroundCanvas)
+	$(window).resize ->
+		resizeCanvasWithWindow $backgroundCanvas
+	return $backgroundCanvas
+	
+
 
 
 # document loaded
 $ () ->
+	#init background
+	$backgroundCanvas = setupBackGroundCanvas()
+
+	$(".clearBackgroundButton").on "click", ->
+		$backgroundCanvas.canvasHelper "clear"
+		false
+
 	$("#clearBackground").on "click", -> drawer.clear()
 
 	$backgroundCanvas = $ "#background"
@@ -31,3 +64,16 @@ $ () ->
 		turtle.setAngle angle
 		turtle.setStart x,y,orientation
 		return turtle
+
+
+
+
+	
+
+
+
+
+
+
+
+

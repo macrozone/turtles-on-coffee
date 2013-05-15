@@ -14,19 +14,15 @@ class root.Lindenmayer
 	setProductionsString: (fullString) ->
 		# parse it
 		productions = {}
-
+		fullString = Tools.trim fullString
 		for oneProduction in fullString.split ","
-			# trim it
-			oneProduction = Tools.trim oneProduction
 			
 			[key, value] = oneProduction.split "->"
-			key = Tools.trim key
-			value = Tools.trim value
 			
 			productions[key] = value
 
-
 		@setProductions productions
+	
 
 	# array/object of something like that "F": "F++F++F"
 	# 
@@ -40,9 +36,9 @@ class root.Lindenmayer
 
 		for variable, replacement of @productions
 			regex = new RegExp variable, "g" # replace all
+
 			@word = @word.replace regex, replacement
-
-
+		
 
 
 
