@@ -4,47 +4,52 @@ block content
 
 	+draggableWindow("Lindenmayer Settings").lindenmayer-settings#lindenmayerSettings
 		
+		:markdown
+			[wikipedia Lindenmayer-Systems](http://de.wikipedia.org/wiki/Lindenmayer-System)
+
+		.input-prepend.span12
+			span.add-on Presets
+			select#presets
+				option chose
 		.input-prepend.span12
 			span.add-on Startword
-			input#startWord(type="text", placeholder="startWord", value="F") 
+			input#startWord(type="text", placeholder="startWord") 
 	
 		.input-prepend.span12
 			span.add-on Productions
-			textarea#productions(placeholder="F -> F++F++F, G -> G-G-G-, etc.", rows="4", cols="20") F -> G++G, G -> F-F
+			textarea#productions(placeholder="F -> F++F++F, G -> G-G-G-, etc.", rows="4", cols="20")
 	
 		.input-prepend.span12
 			span.add-on Steps
-			input#steps(type="text", placeholder="steps", value="8")
+			input#steps(type="text", placeholder="steps")
 
+		
+
+		.input-prepend.span12
+			span.add-on Step Width
+			input#turtleStepWidth(type="text", placeholder="100") 
+
+		
+		
+		.input-prepend.span12
+			span.add-on Angle °
+			input#turtleAngle(type="text", placeholder="60") 
+		
+		.input-prepend.span12
+			span.add-on start X
+			input#turtleStartX(type="text", placeholder="200") 
+		
+		.input-prepend.span12
+			span.add-on start Y
+			input#turtleStartY(type="text", placeholder="200") 
+		.input-prepend.span12
+			span.add-on Orientation °
+			input#turtleOrientation(type="text", placeholder="orientation")
+		
 		br
 
 		button#process draw 
 		button.clearBackgroundButton clear
-	
-	+draggableWindow("Turtle Settings").turtle-settings#turtleSettings
-
-		.input-prepend.span12
-			span.add-on Step Width
-			input#turtleStepWidth(type="text", placeholder="100", value="2") 
-
-			input#autoStepWidth(type="checkbox")
-			span (experimental)
-		
-		.input-prepend.span12
-			span.add-on Angle °
-			input#turtleAngle(type="text", placeholder="60", value="90") 
-		
-		.input-prepend.span12
-			span.add-on start X
-			input#turtleStartX(type="text", placeholder="100", value="100") 
-		
-		.input-prepend.span12
-			span.add-on start Y
-			input#turtleStartY(type="text", placeholder="100", value="100") 
-		.input-prepend.span12
-			span.add-on Orientation °
-			input#turtleOrientation(type="text", placeholder="orientation", value="0")
-		
 
 
 	.span12

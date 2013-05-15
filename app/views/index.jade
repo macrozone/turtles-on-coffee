@@ -1,13 +1,35 @@
 extends layout
 
 block content
-
 	.hero-unit
-		h1 Turtles on Coffee
-			p home
+		h1 Turtles on coffee
+			
+		:markdown
+			An application that draws 
+			[Turtle-Graphics](http://de.wikipedia.org/wiki/Turtle-Grafik).
 
-	+draggableWindow("mytitle")#test
-		p bla
+			Fully written in 
+			[CoffeeScript](http://coffeescript.org/), 
+			using 
+			[Bootstrap](http://twitter.github.io/bootstrap/)
+			driven by 
+			[node.js](nodejs.org) /
+			[express](http://expressjs.com/)
+
+
+			Play with the [Lindenmayer-Systems](/lindenmayer)
+			or *click on the background* for a little demo
+
+			*[Fork me on GitHub](https://github.com/macrozone/turtles-on-coffee)*
+
+			
+
+
+
+	
+
+
 
 append scripts	
-	!= js('index.js')
+
+	!= js('random.js')
