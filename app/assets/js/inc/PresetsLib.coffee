@@ -38,6 +38,17 @@ class root.PresetsLib
 			turtleOrientation: 0
 			colorRotatingAngle: 0.01
 		,
+			label: "Lévy-C-Kurve"
+			startWord: "F"
+			productions: "F -> +F--F+"
+			steps: 8
+			turtleStepWidth: 1
+			turtleAngle: 45
+			turtleStartX: 400
+			turtleStartY: 500
+			turtleOrientation: 0
+			colorRotatingAngle: 0.01
+		,
 			label: "Peano"
 			startWord: "X"
 

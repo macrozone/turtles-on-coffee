@@ -23,8 +23,6 @@ class root.Turtle
 
 	setColorRotatingAngle: (@colorAngle) ->
 
-
-
 	getColorHSLString: ->
 		"hsl(#{@color.hue}, #{@color.saturation}%, #{@color.lightness}%)"
 	setStart: (@x, @y, @orientation) ->
@@ -76,7 +74,6 @@ class root.Turtle
 			@color.hue = (@color.hue+@colorAngle) % 360
 
 
-		
 	
 	turnLeft: () ->
 		@orientation -= @angle
