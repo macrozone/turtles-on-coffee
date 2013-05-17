@@ -41,8 +41,8 @@ class root.PresetsLib
 			label: "Lévy-C-Kurve"
 			startWord: "F"
 			productions: "F -> +F--F+"
-			steps: 8
-			turtleStepWidth: 1
+			steps: 22
+			turtleStepWidth: 2
 			turtleAngle: 45
 			turtleStartX: 400
 			turtleStartY: 500
