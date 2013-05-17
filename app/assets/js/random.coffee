@@ -34,11 +34,8 @@ $ () ->
 	#init background
 	$backgroundCanvas = setupBackGroundCanvas()
 
-	$(".clearBackgroundButton").on "click", ->
-		$backgroundCanvas.canvasHelper "clear"
-		false
+	
 
-	$("#clearBackground").on "click", -> drawer.clear()
 
 	$backgroundCanvas = $ "#background"
 
@@ -59,6 +56,12 @@ $ () ->
 	# put turtle on background on click on the background
 	$(".hero-unit").click onCanvasClick
 	$backgroundCanvas.click onCanvasClick
+
+	$(".clearBackgroundButton").on "click", ->
+		$backgroundCanvas.canvasHelper "clear"
+		drawer.clear()
+		false
+
 
 	createTurtle = (x,y, orientation) ->
 		turtle = new Turtle $backgroundCanvas
