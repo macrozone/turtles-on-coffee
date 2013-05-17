@@ -7,12 +7,6 @@
 #= require inc/Turtle.coffee
 
 
-# settings
-stepWidth = 10
-angle = 60
-connectMode = false
-speed = 1000
-
 
 
 resizeCanvasWithWindow = ($canvas) ->
@@ -49,19 +43,29 @@ $ () ->
 	$backgroundCanvas = $ "#background"
 
 	drawer = new RandomLooperDrawer
-	drawer.setSpeed speed
+	drawer.setSpeed parseInt $("#speed").val(), 10
+	$("#speed").on "change", -> 
+		drawer.setSpeed parseInt $("#speed").val(), 10
 	
-	# put turtle on background on click on the background
-	$("body").click (e) ->
+	
+
+	onCanvasClick = (e) ->
+		console.log e
+		angle = parseFloat $("#turtleAngle").val()
 		startOrientation = angle * Math.ceil(Math.random()*(360/angle))
 		drawer.addTurtle createTurtle e.pageX, e.pageY,startOrientation
 		drawer.start()
 
+	# put turtle on background on click on the background
+	$(".hero-unit").click onCanvasClick
+	$backgroundCanvas.click onCanvasClick
+
 	createTurtle = (x,y, orientation) ->
 		turtle = new Turtle $backgroundCanvas
-		turtle.setConnectMode connectMode
-		turtle.setStepWidth stepWidth
-		turtle.setAngle angle
+		turtle.setColorRotatingAngle parseFloat $("#colorRotatingAngle").val()
+		turtle.setConnectMode $("#connectMode").is ":checked"
+		turtle.setStepWidth parseFloat $("#turtleStepWidth").val()
+		turtle.setAngle parseFloat $("#turtleAngle").val()
 		turtle.setStart x,y,orientation
 		return turtle
 

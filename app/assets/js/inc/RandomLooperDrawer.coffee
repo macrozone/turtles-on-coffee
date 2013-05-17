@@ -8,6 +8,7 @@ class root.RandomLooperDrawer extends root.DrawerAbstract
 	
 
 	turtleStep: (turtle) ->
+	
 		id = Math.floor(Math.random() * 2)
 		switch id
 			when 0 then turtle.turnLeft() 

@@ -5,16 +5,19 @@ block content
 		h1 Turtles on coffee
 			
 		:markdown
-			An application that draws 
-			[Turtle-Graphics](http://de.wikipedia.org/wiki/Turtle-Grafik).
-
+			An application that draws
+			[Turtle-Graphics](http://de.wikipedia.org/wiki/Turtle-Grafik)
+			and [Lindenmayer-Systems](http://de.wikipedia.org/wiki/Lindenmayer-System)  
 			Fully written in 
 			[CoffeeScript](http://coffeescript.org/), 
-			using 
-			[Bootstrap](http://twitter.github.io/bootstrap/)
-			driven by 
+			driven by
 			[node.js](nodejs.org) /
-			[express](http://expressjs.com/)
+			[express](http://expressjs.com/)  
+			using
+			[Bootstrap](http://twitter.github.io/bootstrap/)
+			as HTML / CSS skelleton
+
+			
 
 
 			Play with the [Lindenmayer-Systems](/lindenmayer)
@@ -27,6 +30,33 @@ block content
 
 			
 
+
+	+draggableWindow("Play").lindenmayer-settings#lindenmayerSettings
+		
+		
+
+		.input-prepend.span12
+			span.add-on Speed
+			input#speed(type="number", placeholder="speed", value="1000")
+
+		.input-prepend.span12
+			span.add-on Angle °
+			input#turtleAngle(type="text", placeholder="60", value="60" )
+	
+
+		.input-prepend.span12
+			span.add-on Step Width
+			input#turtleStepWidth(type="number", placeholder="20", value="20") 
+
+		.input-prepend.span12
+			span.add-on Connect Turtles
+			input#connectMode(type="checkbox", value="1") 
+		
+		.input-prepend.span12
+			span.add-on Color-Hue Rotationg Angle °
+			input#colorRotatingAngle(type="number", placeholder="1", value="1")
+		
+		
 
 
 	

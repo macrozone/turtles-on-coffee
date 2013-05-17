@@ -42,11 +42,12 @@ class root.Turtle
 
 
 	move: () ->
+
 		@context.lineWidth  = 1
 		@context.strokeStyle = @getColorHSLString()
 		@context.lineTo @getNormalized(@x), @getNormalized(@y)
 		@context.stroke()
-		@context.beginPath()
+		@context.beginPath() unless @connectMode
 
 	# normalize the coordinates so that it fits correctly and takes care of the qualityFactor
 	getNormalized: (position) ->

@@ -1,13 +1,34 @@
+
+fade(opa = 0.1, delay= 1.5s)
+	
+
+	transition: opacity .75s ease-in-out delay
+	-moz-transition: opacity .75s ease-in-out delay
+	-webkit-transition: opacity .75s ease-in-out delay
+	opacity: opa
+	&:hover 
+		opacity: 1
+		transition: opacity .25s ease-in-out 
+		-moz-transition: opacity .25s ease-in-out 
+		-webkit-transition: opacity .25s ease-in-out 
+
 .hero-unit
-  background-color: rgba(238, 238, 238, 0.2)
+	fade(0, 5s)
+	background-color: rgba(238, 238, 238, 0.1)
+
+		
 
 
-
+.navbar
+	fade(0, 5s)
 
 
 .well
 	background-color: white
 
 .draggableWindow
+	fade()
+	display: none
 	padding: 12px
 	overflow: hidden
+	cursor: pointer
