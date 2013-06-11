@@ -28,9 +28,10 @@ class root.DrawerAbstract
 
 	stop: ->
 		@running = false
-	clear: ->
+	clear: (removeTurtles)->
 		@stop()
-		@removeTurtles()
+		@removeTurtles() if removeTurtles
+		
 
 	removeTurtles: ->
 		@turtles = []

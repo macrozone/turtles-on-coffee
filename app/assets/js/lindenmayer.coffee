@@ -122,7 +122,7 @@ $ () ->
 	$process.on "click", process
 	
 	$(".clearBackgroundButton").on "click", -> 
-		drawer.clear()
+		drawer.clear(false)
 		$canvas.canvasHelper "clear"
 
 	
